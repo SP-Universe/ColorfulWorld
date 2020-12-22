@@ -1,11 +1,11 @@
 {
-        "homepage": "https://www.curseforge.com/minecraft/mc-mods/colorful-world", 
+        "homepage": "https://www.curseforge.com/minecraft/mc-mods/colorful-world",
         "promos": { 
                 "1.15.2-latest": "1.0.1",
                 "1.15.2-recommended": "1.0.0"
         }, 
         "1.15.2": {
                 "1.0.0": "Ported to 1.15.2",
-				"1.0.1": "Bug fixes",
+				"1.0.1": "Bug fixes"
         }
 }
