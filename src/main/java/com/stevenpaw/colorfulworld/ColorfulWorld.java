@@ -22,10 +22,13 @@ import java.util.stream.Collectors;
 public class ColorfulWorld
 {
     private static final Logger LOGGER = LogManager.getLogger();
+    public static final String MOD_ID = "colorfulworld";
+    public static ColorfulWorld instance;
 
     public ColorfulWorld() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+        instance = this;
 
         MinecraftForge.EVENT_BUS.register(this);
     }
