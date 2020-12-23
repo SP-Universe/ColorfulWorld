@@ -2,11 +2,17 @@ package com.stevenpaw.colorfulworld.init;
 
 import com.stevenpaw.colorfulworld.ColorfulWorld;
 import com.stevenpaw.colorfulworld.objects.items.SpecialItem;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.LazyValue;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -31,6 +37,12 @@ public class ItemInit
     public static final Item example_axe = null;
     public static final Item example_hoe = null;
 
+    //Armor
+    public static final Item test_helmet = null;
+    public static final Item test_chestplate = null;
+    public static final Item test_leggings = null;
+    public static final Item test_shoes = null;
+
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event)
     {
@@ -42,11 +54,26 @@ public class ItemInit
         event.getRegistry().register(new SpecialItem(new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("special_item"));
 
         //Example Tools
-        event.getRegistry().register(new SwordItem(ModItemTier.EXAMPLE, 7, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_sword"));
-        event.getRegistry().register(new PickaxeItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_pickaxe"));
-        event.getRegistry().register(new ShovelItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_shovel"));
-        event.getRegistry().register(new AxeItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_axe"));
-        event.getRegistry().register(new HoeItem(ModItemTier.EXAMPLE, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_hoe"));
+        event.getRegistry().register(new SwordItem(ModItemTier.EXAMPLE, 7, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance))
+                .setRegistryName("example_sword"));
+        event.getRegistry().register(new PickaxeItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance))
+                .setRegistryName("example_pickaxe"));
+        event.getRegistry().register(new ShovelItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance))
+                .setRegistryName("example_shovel"));
+        event.getRegistry().register(new AxeItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance))
+                .setRegistryName("example_axe"));
+        event.getRegistry().register(new HoeItem(ModItemTier.EXAMPLE, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance))
+                .setRegistryName("example_hoe"));
+
+        //Armor
+        event.getRegistry().register(new ArmorItem(ModArmorMaterial.TEST, EquipmentSlotType.HEAD,
+                new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("test_helmet"));
+        event.getRegistry().register(new ArmorItem(ModArmorMaterial.TEST, EquipmentSlotType.CHEST,
+                new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("test_chestplate"));
+        event.getRegistry().register(new ArmorItem(ModArmorMaterial.TEST, EquipmentSlotType.LEGS,
+                new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("test_leggings"));
+        event.getRegistry().register(new ArmorItem(ModArmorMaterial.TEST, EquipmentSlotType.FEET,
+                new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("test_boots"));
     }
 
     public enum ModItemTier implements IItemTier
@@ -103,3 +130,4 @@ public class ItemInit
         }
     }
 }
+

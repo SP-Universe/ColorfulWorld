@@ -9,7 +9,12 @@
   "item.colorfulworld.example_axe": "Example Axe",
   "item.colorfulworld.example_hoe": "Example Hoe",
 
+  "item.colorfulworld.test_helmet": "Test Helmet",
+  "item.colorfulworld.test_chestplate": "Test Chestplate",
+  "item.colorfulworld.test_leggings": "Test Leggings",
+  "item.colorfulworld.test_boots": "Test Boots",
+
   "block.colorfulworld.example_block": "Example Block",
 
-  "itemgroup.colorfulworldtab": "Colorful World"
+  "itemGroup.colorfulworldtab": "Colorful World"
 }
