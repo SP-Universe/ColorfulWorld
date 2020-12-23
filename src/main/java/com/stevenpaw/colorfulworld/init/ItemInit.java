@@ -1,6 +1,7 @@
 package com.stevenpaw.colorfulworld.init;
 
 import com.stevenpaw.colorfulworld.ColorfulWorld;
+import com.stevenpaw.colorfulworld.objects.items.SpecialItem;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.EffectInstance;
@@ -21,6 +22,8 @@ public class ItemInit
     public static final Item example_item = null;
     public static final Item test_item = null;
 
+    public static final Item special_item = null;
+
     //Example Tools
     public static final Item example_sword = null;
     public static final Item example_pickaxe = null;
@@ -36,18 +39,14 @@ public class ItemInit
                 .group(ColorfulWorld.ColorfulWorldItemGroup.instance)
                 .food(new Food.Builder().hunger(6).saturation(1.2f).effect(new EffectInstance(Effects.BLINDNESS, 6000, 5), 0.7f).build()))
                 .setRegistryName("test_item"));
+        event.getRegistry().register(new SpecialItem(new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("special_item"));
 
         //Example Tools
-        event.getRegistry().register(new SwordItem(ModItemTier.EXAMPLE, 7, 5.0F, new Item.Properties()
-                .group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_sword"));
-        event.getRegistry().register(new PickaxeItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties()
-                .group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_pickaxe"));
-        event.getRegistry().register(new ShovelItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties()
-                .group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_shovel"));
-        event.getRegistry().register(new AxeItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties()
-                .group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_axe"));
-        event.getRegistry().register(new HoeItem(ModItemTier.EXAMPLE, 5.0F, new Item.Properties()
-                .group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_hoe"));
+        event.getRegistry().register(new SwordItem(ModItemTier.EXAMPLE, 7, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_sword"));
+        event.getRegistry().register(new PickaxeItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_pickaxe"));
+        event.getRegistry().register(new ShovelItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_shovel"));
+        event.getRegistry().register(new AxeItem(ModItemTier.EXAMPLE, 4, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_axe"));
+        event.getRegistry().register(new HoeItem(ModItemTier.EXAMPLE, 5.0F, new Item.Properties().group(ColorfulWorld.ColorfulWorldItemGroup.instance)).setRegistryName("example_hoe"));
     }
 
     public enum ModItemTier implements IItemTier
