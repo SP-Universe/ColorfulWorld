@@ -1,9 +1,15 @@
 package com.stevenpaw.colorfulworld;
 
+import com.stevenpaw.colorfulworld.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.tutorial.Tutorial;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -25,9 +31,11 @@ public class ColorfulWorld
     public static final String MOD_ID = "colorfulworld";
     public static ColorfulWorld instance;
 
-    public ColorfulWorld() {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+    public ColorfulWorld()
+    {
+        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::setup);
+        modEventBus.addListener(this::doClientStuff);
         instance = this;
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -47,5 +55,20 @@ public class ColorfulWorld
     public void onServerStarting(FMLServerStartingEvent event)
     {
 
+    }
+
+    public static class ColorfulWorldItemGroup extends ItemGroup
+    {
+        public static final ColorfulWorldItemGroup instance = new ColorfulWorldItemGroup(ItemGroup.GROUPS.length, "colorfulworldtab");
+        private ColorfulWorldItemGroup(int index, String label)
+        {
+            super(index,label);
+        }
+
+        @Override
+        public ItemStack createIcon()
+        {
+            return new ItemStack(BlockInit.example_block);
+        }
     }
 }

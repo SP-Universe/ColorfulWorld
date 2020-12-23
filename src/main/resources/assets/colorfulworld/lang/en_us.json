@@ -1,4 +1,14 @@
 {
   "item.colorfulworld.example_item": "Example Item",
-  "item.colorfulworld.test_item": "Test Item"
+  "item.colorfulworld.test_item": "Test Item",
+
+  "item.colorfulworld.example_sword": "Example Sword",
+  "item.colorfulworld.example_pickaxe": "Example Pickaxe",
+  "item.colorfulworld.example_shovel": "Example Shovel",
+  "item.colorfulworld.example_axe": "Example Axe",
+  "item.colorfulworld.example_hoe": "Example Hoe",
+
+  "block.colorfulworld.example_block": "Example Block",
+
+  "itemgroup.colorfulworldtab": "Colorful World"
 }
