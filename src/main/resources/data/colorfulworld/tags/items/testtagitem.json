@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "colorfulworld:example_item",
+    "colorfulworld:test_item",
+    "minecraft:apple"
+  ]
+}

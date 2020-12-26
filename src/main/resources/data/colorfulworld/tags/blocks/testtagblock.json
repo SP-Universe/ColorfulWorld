@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "colorfulworld:example_block",
+    "minecraft:cactus",
+    "minecraft:dirt"
+  ]
+}
