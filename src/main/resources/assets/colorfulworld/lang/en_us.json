@@ -1,6 +1,7 @@
 {
   "item.colorfulworld.example_item": "Example Item",
   "item.colorfulworld.test_item": "Test Item",
+  "item.colorfulworld.example_fuel_item": "Example Fuel Item",
   "item.colorfulworld.special_item": "Special Item",
 
   "item.colorfulworld.example_sword": "Example Sword",
@@ -15,6 +16,7 @@
   "item.colorfulworld.test_boots": "Test Boots",
 
   "block.colorfulworld.example_block": "Example Block",
+  "block.colorfulworld.special_block": "Special Block",
 
   "itemGroup.colorfulworldtab": "Colorful World"
 }
