@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sis",
+    "i i",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "colorfulworld:example_shovel"
+    },
+    "i": {
+      "tag": "forge:ingots/gold"
+    }
+  },
+  "result": {
+    "item": "minecraft:dragon_egg"
+  }
+}

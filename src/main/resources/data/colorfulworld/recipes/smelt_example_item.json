@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "colorfulworld:example_block"
+  },
+  "result": "colorfulworld:example_item",
+  "experience": 5.0,
+  "cookingtime": 50
+}
