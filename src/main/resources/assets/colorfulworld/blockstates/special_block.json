@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model":  "colorfulworld:block/special_block" },
+    "facing=south": {"model":  "colorfulworld:block/special_block", "y":  180 },
+    "facing=west": {"model":  "colorfulworld:block/special_block", "y":  270 },
+    "facing=east": {"model":  "colorfulworld:block/special_block", "y":  90 }
+  }
+}

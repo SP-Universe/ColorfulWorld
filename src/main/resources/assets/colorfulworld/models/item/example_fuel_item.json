@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "colorfulworld:items/example_fuel_item"
+  }
+}
