@@ -23,5 +23,8 @@
   "block.colorfulworld.example_pressure_plate": "Example Pressure Plate",
   "block.colorfulworld.example_fence": "Example Fence",
 
+  "block.colorfulworld.example_chest": "Example Chest",
+  "container.example_chest": "Example Chest",
+
   "itemGroup.colorfulworldtab": "Colorful World"
 }
