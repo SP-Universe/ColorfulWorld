@@ -1,6 +1,7 @@
 package com.stevenpaw.colorfulworld.init;
 
 import com.stevenpaw.colorfulworld.ColorfulWorld;
+import com.stevenpaw.colorfulworld.objects.blocks.ExampleChestBlock;
 import com.stevenpaw.colorfulworld.objects.blocks.ModWoodButtonBlock;
 import com.stevenpaw.colorfulworld.objects.blocks.ModWoodPressurePlateBlock;
 import net.minecraft.block.Block;
@@ -32,5 +33,5 @@ public class BlockInitNew {
             ("example_pressure_plate", () -> new ModWoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.create(Material.SAND, MaterialColor.GOLD)));
 
     public static final RegistryObject<Block> EXAMPLE_CHEST = BLOCKS.register
-            ("example_chest", () -> new ExampleChestBlock(Block.Properties.from(BlockInit.example_block)));
+            ("example_chest", () -> new ExampleChestBlock(Block.Properties.from(BlockInitNew.DEF_BLOCK.get())));
 }
