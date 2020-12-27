@@ -1,6 +1,7 @@
 package com.stevenpaw.colorfulworld.init;
 
 import com.stevenpaw.colorfulworld.ColorfulWorld;
+import com.stevenpaw.colorfulworld.container.ExampleChestContainer;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fml.RegistryObject;

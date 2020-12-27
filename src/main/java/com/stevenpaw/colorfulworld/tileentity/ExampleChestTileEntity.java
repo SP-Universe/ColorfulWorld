@@ -1,5 +1,6 @@
 package com.stevenpaw.colorfulworld.tileentity;
 
+import com.stevenpaw.colorfulworld.container.ExampleChestContainer;
 import com.stevenpaw.colorfulworld.init.ModTileEntityTypes;
 import com.stevenpaw.colorfulworld.objects.blocks.ExampleChestBlock;
 import net.minecraft.block.Block;
