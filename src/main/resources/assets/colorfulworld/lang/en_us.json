@@ -18,5 +18,10 @@
   "block.colorfulworld.example_block": "Example Block",
   "block.colorfulworld.special_block": "Special Block",
 
+  "block.colorfulworld.example_stairs": "Example Stairs",
+  "block.colorfulworld.example_button": "Example Button",
+  "block.colorfulworld.example_pressure_plate": "Example Pressure Plate",
+  "block.colorfulworld.example_fence": "Example Fence",
+
   "itemGroup.colorfulworldtab": "Colorful World"
 }

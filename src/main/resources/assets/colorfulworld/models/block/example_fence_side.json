@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_side",
+    "textures": {
+        "texture": "colorfulworld:blocks/example_block"
+    }
+}

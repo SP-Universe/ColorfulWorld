@@ -1,0 +1,6 @@
+{
+    "parent": "block/button_inventory",
+    "textures": {
+        "texture": "colorfulworld:blocks/example_block"
+    }
+}
