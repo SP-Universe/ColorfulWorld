@@ -20,33 +20,48 @@ public class ExampleChestContainer extends Container {
     public final ExampleChestTileEntity tileEntity;
     private final IWorldPosCallable canInteractWithCallable;
 
+    //VARIABLES FOR DEFINING THE SLOTS---------
+    int startChestX = 8;                                //The pixelX on which the first Slot starts
+    int startChestY = 18;                               //The pixelY on which the first Slot starts
+    int slotSize = 16;                                  //Pixelsize of a slot
+    int slotSpacing = 2;                                //Spacing between Slots
+    int slotSizeWithSpace = slotSize + slotSpacing;     //SlotSize with SlotSpacing
+
+    int rowCount = 4;                                   //Number of Rows for the Chest
+    int columnCount = 9;                                //Number of Columns for the Chest
+
+    int playerInventoryStartX = 8;                      //The pixelX on which the first Slot of the PlayerInventory starts
+    int inventorySpacing = 12;                          //The space between the Container and the PlayerInventory
+    int hotBarSpacing = 4;                              //The space between the PlayerInventory and the HotBar
+    //-----------------------------------------
+
+    int slotCount = rowCount * columnCount;
+
     public ExampleChestContainer(final int windowId, final PlayerInventory playerInventory, final ExampleChestTileEntity tileEntity) {
         super(ModContainerTypes.EXAMPLE_CHEST.get(), windowId);
         this.tileEntity = tileEntity;
         this.canInteractWithCallable = IWorldPosCallable.of(tileEntity.getWorld(), tileEntity.getPos());
 
         //Chest Inventory
-        int startX = 8;
-        int startY = 18;
-        int slotSizePlus2 = 18;
-        for (int row = 0; row < 4; ++row) {
-            for (int column = 0; column < 9; ++column) {
-                this.addSlot(new Slot(tileEntity, (row * 9) + column, startX + (column * slotSizePlus2), startY + (row * slotSizePlus2)));
+        for (int row = 0; row < rowCount; ++row) {
+            for (int column = 0; column < columnCount; ++column) {
+                this.addSlot(new Slot(tileEntity, (row * columnCount) + column, startChestX + (column * slotSizeWithSpace), startChestY + (row * slotSizeWithSpace)));
             }
         }
 
+
         //Player Inventory
-        int startPlayerInvY = startY * 5 + 12;
+        int startPlayerInvY = startChestY + (rowCount * slotSizeWithSpace) + inventorySpacing;
         for (int row = 0; row < 3; ++row) {
             for (int column = 0; column < 9; ++column) {
-                this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, startX + (column * slotSizePlus2), startPlayerInvY + (row * slotSizePlus2)));
+                this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, playerInventoryStartX + (column * slotSizeWithSpace), startPlayerInvY + (row * slotSizeWithSpace)));
             }
         }
 
         //Player HotBar
-        int hotbarY = startPlayerInvY + (startPlayerInvY / 2) + 7;
+        int hotbarY = startPlayerInvY + (3 * slotSizeWithSpace) + hotBarSpacing;
         for (int column = 0; column < 9; ++column) {
-            this.addSlot(new Slot(playerInventory, column, startX + (column * slotSizePlus2), hotbarY));
+            this.addSlot(new Slot(playerInventory, column, playerInventoryStartX + (column * slotSizeWithSpace), hotbarY));
         }
     }
 
@@ -76,11 +91,11 @@ public class ExampleChestContainer extends Container {
         if (slot != null && slot.getHasStack()) {
             ItemStack itemstack1 = slot.getStack();
             itemstack = itemstack1.copy();
-            if (index < 36) {
-                if (!this.mergeItemStack(itemstack1, 36, this.inventorySlots.size(), true)) {
+            if (index < slotCount) {
+                if (!this.mergeItemStack(itemstack1, slotCount, this.inventorySlots.size(), true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.mergeItemStack(itemstack1, 0, 36, false)) {
+            } else if (!this.mergeItemStack(itemstack1, 0, slotCount, false)) {
                 return ItemStack.EMPTY;
             }
 
