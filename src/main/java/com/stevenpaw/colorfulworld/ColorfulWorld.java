@@ -1,9 +1,6 @@
 package com.stevenpaw.colorfulworld;
 
-import com.stevenpaw.colorfulworld.init.BlockInit;
-import com.stevenpaw.colorfulworld.init.BlockInitNew;
-import com.stevenpaw.colorfulworld.init.ItemInitNew;
-import com.stevenpaw.colorfulworld.init.ModTileEntityTypes;
+import com.stevenpaw.colorfulworld.init.*;
 import com.stevenpaw.colorfulworld.world.gen.ColorfulWorldOreGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -45,6 +42,7 @@ public class ColorfulWorld
         ItemInitNew.ITEMS.register(modEventBus);
         BlockInitNew.BLOCKS.register(modEventBus);
         ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
+        ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
 
         instance = this;
 
