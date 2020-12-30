@@ -9,6 +9,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -42,6 +43,7 @@ public class ColorfulWorld
         ItemInitNew.ITEMS.register(modEventBus);
         BlockInitNew.BLOCKS.register(modEventBus);
         ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
+        BiomeInit.BIOMES.register(modEventBus);
         ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
 
         instance = this;
@@ -61,6 +63,11 @@ public class ColorfulWorld
         });
 
         LOGGER.debug("[COLORFUL WORLD] - Registered BlockItems!");
+    }
+
+    @SubscribeEvent
+    public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
+        BiomeInit.registerBiomes();
     }
 
     private void setup(final FMLCommonSetupEvent event)

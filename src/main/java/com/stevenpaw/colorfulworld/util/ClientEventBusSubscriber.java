@@ -2,8 +2,11 @@ package com.stevenpaw.colorfulworld.util;
 
 import com.stevenpaw.colorfulworld.ColorfulWorld;
 import com.stevenpaw.colorfulworld.client.gui.ExampleChestScreen;
+import com.stevenpaw.colorfulworld.init.BlockInitNew;
 import com.stevenpaw.colorfulworld.init.ModContainerTypes;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -15,5 +18,6 @@ public class ClientEventBusSubscriber {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
         ScreenManager.registerFactory(ModContainerTypes.EXAMPLE_CHEST.get(), ExampleChestScreen::new);
+        RenderTypeLookup.setRenderLayer(BlockInitNew.JAZZ_SAPLING.get(), RenderType.getCutout());
     }
 }

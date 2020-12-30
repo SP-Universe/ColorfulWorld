@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "colorfulworld:blocks/jazz_sapling"
+  }
+}

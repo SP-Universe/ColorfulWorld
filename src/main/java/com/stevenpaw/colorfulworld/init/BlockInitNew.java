@@ -2,12 +2,11 @@ package com.stevenpaw.colorfulworld.init;
 
 import com.stevenpaw.colorfulworld.ColorfulWorld;
 import com.stevenpaw.colorfulworld.objects.blocks.ExampleChestBlock;
+import com.stevenpaw.colorfulworld.objects.blocks.ModSaplingBlock;
 import com.stevenpaw.colorfulworld.objects.blocks.ModWoodButtonBlock;
 import com.stevenpaw.colorfulworld.objects.blocks.ModWoodPressurePlateBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.FenceBlock;
-import net.minecraft.block.PressurePlateBlock;
-import net.minecraft.block.StairsBlock;
+import com.stevenpaw.colorfulworld.world.feature.JazzTree;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.Item;
@@ -34,4 +33,16 @@ public class BlockInitNew {
 
     public static final RegistryObject<Block> EXAMPLE_CHEST = BLOCKS.register
             ("example_chest", () -> new ExampleChestBlock(Block.Properties.from(BlockInitNew.DEF_BLOCK.get())));
+
+    public static final RegistryObject<Block> JAZZ_PLANKS = BLOCKS.register
+            ("jazz_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
+
+    public static final RegistryObject<Block> JAZZ_LOG = BLOCKS.register
+            ("jazz_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+
+    public static final RegistryObject<Block> JAZZ_LEAVES = BLOCKS.register
+            ("jazz_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+
+    public static final RegistryObject<Block> JAZZ_SAPLING = BLOCKS.register
+            ("jazz_sapling", () -> new ModSaplingBlock(() -> new JazzTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 }
